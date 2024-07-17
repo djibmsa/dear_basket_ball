@@ -1,0 +1,23 @@
+.mambaMentality {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.mamba {
+  border-radius: 2rem;
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+h1 {
+  margin: 2rem 2rem 2rem 2rem;
+}
+
+p {
+  margin: 2rem 2rem 2rem 2rem;
+}
