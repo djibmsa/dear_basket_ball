@@ -1,0 +1,38 @@
+.image-display {
+  text-align: center;
+  margin: 20px;
+}
+
+.image-display button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.image-container {
+  margin-top: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2rem;
+  width: 30vw;
+}
+
+.ball {
+  width: 10rem;
+  border-radius: 20rem;
+}
+
+.ball:hover {
+  background-color: transparent;
+}
+
+.mesgars {
+  display: flex;
+  justify-content: space-around;
+}
