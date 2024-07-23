@@ -26,6 +26,7 @@
 .ball {
   width: 10rem;
   border-radius: 20rem;
+  background-color: transparent;
 }
 
 .ball:hover {
@@ -35,4 +36,8 @@
 .mesgars {
   display: flex;
   justify-content: space-around;
+}
+
+.nickname {
+  color: #eee;
 }

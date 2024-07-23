@@ -1,6 +1,7 @@
 .navbar,
 .menu {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   list-style: none;
   background: linear-gradient(#401010, #242423);
@@ -45,4 +46,13 @@
 
 .dear {
   margin-left: 10rem;
+}
+
+@media screen and (min-width: 725px) {
+  .logo {
+    width: 10vw;
+    border-radius: 25rem;
+    border: solid;
+    margin-left: 0;
+  }
 }

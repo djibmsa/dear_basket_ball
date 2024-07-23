@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./connexion.css";
 
 function LoginForm() {
@@ -7,6 +7,8 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+  const ApiUrl = import.meta.env.VITE_API_URL;
 
   const validate = () => {
     const newErrors = {};
@@ -18,12 +20,34 @@ function LoginForm() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-    } 
+      return;
+    }
+
+    try {
+      const response = await fetch(`${ApiUrl}/api/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
+      } else {
+        const errorData = await response.json();
+        console.error("Error response data:", errorData);
+        console.error(errorData.message || "Une erreur s'est produite");
+      }
+    } catch (err) {
+      console.error(err);
+      console.error("Une erreur s'est produite");
+    }
   };
 
   return (

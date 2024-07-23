@@ -3,15 +3,17 @@ import "./alltime.css";
 
 function Hallof() {
   const [imageSrc, setImageSrc] = useState(null);
+  const [imageTitle, setImageTitle] = useState("");
 
-  const handleButtonClick = (image) => {
+  const handleButtonClick = (image, title) => {
     setImageSrc(image);
+    setImageTitle(title);
   };
 
   return (
     <>
       <div>
-        <h1>Favorite players</h1>
+        <h1>Joueur impactant</h1>
       </div>
       <div>
         <p>
@@ -62,7 +64,9 @@ function Hallof() {
           <div className="mesgars">
             <button
               type="button"
-              onClick={() => handleButtonClick("src/assets/images/kb8.jpg")}
+              onClick={() =>
+                handleButtonClick("src/assets/images/kb8.jpg", "Kobe Bryant")
+              }
             >
               <img
                 className="ball"
@@ -72,7 +76,12 @@ function Hallof() {
             </button>
             <button
               type="button"
-              onClick={() => handleButtonClick("src/assets/images/allen.jpg")}
+              onClick={() =>
+                handleButtonClick(
+                  "src/assets/images/allen.jpg",
+                  "Allen Iverson"
+                )
+              }
             >
               <img
                 className="ball"
@@ -82,7 +91,9 @@ function Hallof() {
             </button>
             <button
               type="button"
-              onClick={() => handleButtonClick("src/assets/images/mg92.jpg")}
+              onClick={() =>
+                handleButtonClick("src/assets/images/mg92.jpg", "Magic Johnson")
+              }
             >
               <img
                 className="ball"
@@ -94,7 +105,8 @@ function Hallof() {
 
           {imageSrc && (
             <div className="image-container">
-              <img src={imageSrc} alt="Selected" />
+              <h2 className="nickname">{imageTitle}</h2>
+              <img src={imageSrc} alt={imageTitle} />
             </div>
           )}
         </div>
