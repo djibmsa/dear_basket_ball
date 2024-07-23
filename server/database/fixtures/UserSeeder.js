@@ -10,7 +10,7 @@ class UserSeeder extends AbstractSeeder {
 
   run() {
     // Generate and insert fake data into the 'user' table
-    for (let i = 1; i < 12; i += 1) {
+    for (let i = 1; i < 1; i += 1) {
       // Generate fake user data
       const fakeUser = {
         id: i,
