@@ -64,13 +64,14 @@ p {
 .toggle-password-checkbox {
   padding-top: 2rem;
   padding-bottom: 2rem;
+  color: #eee;
 }
 
 .validate2 {
   display: block;
   min-width: 100px;
-  color: #e9c46a;
-  background-color: #242423;
+  color: #eee;
+  background-color: #fe6b00;
   padding: 5px;
   border-radius: 5px;
   text-align: center;
@@ -81,6 +82,16 @@ p {
 }
 
 .validate2:hover {
-  background-color: #e9c46a;
-  color: #242423;
+  background-color: #eee;
+  color: #fe6b00;
+}
+
+.field {
+  color: #eee;
+  display: flex;
+  justify-content: left;
+}
+
+span {
+  color: red;
 }
